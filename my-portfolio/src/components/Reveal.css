@@ -1,0 +1,24 @@
+/* src/components/Reveal.css */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-up    { transform: translateY(50px); }
+.reveal-left  { transform: translateX(-70px); }
+.reveal-right { transform: translateX(70px); }
+.reveal-zoom  { transform: scale(0.85); }
+
+.reveal.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* respect users who turn off animations in their system */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

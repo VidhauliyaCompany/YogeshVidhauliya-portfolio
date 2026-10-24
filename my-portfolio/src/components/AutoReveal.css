@@ -1,0 +1,11 @@
+/* src/components/AutoReveal.css */
+.auto-reveal {
+  opacity: 0 !important;
+  transform: translateY(45px) !important;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
+}
+
+.auto-reveal.auto-in {
+  opacity: 1 !important;
+  transform: none !important;
+}

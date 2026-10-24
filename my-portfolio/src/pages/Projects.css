@@ -1,0 +1,132 @@
+/* src/pages/Projects.css */
+.projects {
+  padding: 80px 0 20px;
+}
+
+/* ---------- Filter buttons ---------- */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.filter-btn {
+  padding: 8px 22px;
+  background: var(--bg-light);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* ---------- Grid ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* ---------- Card ---------- */
+.project-card {
+  background: var(--bg-light);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
+  border-color: var(--primary);
+}
+
+.project-img {
+  display: block;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.1);
+}
+
+.project-body {
+  padding: 22px;
+}
+
+.project-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.project-body p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 15px;
+}
+
+/* ---------- Tech tags ---------- */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-tech span {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--secondary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* ---------- Links ---------- */
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--primary);
+  transition: 0.3s;
+}
+
+.project-links a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

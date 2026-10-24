@@ -1,0 +1,282 @@
+/* src/pages/Home.css */
+.home {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.home-text {
+  flex: 1;
+}
+
+.home-hello {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.home-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.home-text h1 span {
+  color: var(--primary);
+}
+
+.home-text h2 {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 10px 0 20px;
+}
+
+.home-desc {
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.home-social {
+  display: flex;
+  gap: 18px;
+}
+
+.home-social a {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.home-social a:hover {
+  color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.4);
+  animation: float 4s ease-in-out infinite;
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: top center;
+  background: var(--bg-light);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-desc {
+    margin: 0 auto 30px;
+  }
+
+  .home-buttons,
+  .home-social {
+    justify-content: center;
+  }
+
+  .image-circle {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+
+
+/* ================= Step 20 effects ================= */
+
+.home {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Floating background blobs ---------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  z-index: 0;
+  animation: blobMove 14s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 380px;
+  height: 380px;
+  background: var(--primary);
+  top: -80px;
+  left: -100px;
+}
+
+.blob-2 {
+  width: 320px;
+  height: 320px;
+  background: var(--secondary);
+  bottom: -60px;
+  right: 5%;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  width: 240px;
+  height: 240px;
+  background: #ec4899;
+  top: 35%;
+  left: 45%;
+  opacity: 0.2;
+  animation-delay: -9s;
+}
+
+@keyframes blobMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(50px, -40px) scale(1.15); }
+  66%      { transform: translate(-40px, 40px) scale(0.9); }
+}
+
+/* ---------- Gradient name ---------- */
+.home-text h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), #ec4899, var(--primary));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  to { background-position: 300% 0; }
+}
+
+/* ---------- Typing effect ---------- */
+.home-text h2 {
+  min-height: 2.6rem;
+}
+
+.typed {
+  color: var(--text);
+}
+
+.cursor {
+  color: var(--primary);
+  margin-left: 3px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ---------- Outline button fix ---------- */
+.btn.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  padding: 40px 0 10px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  text-align: center;
+  background: var(--bg-light);
+  padding: 35px 15px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
+}
+
+.stat-card h3 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-text h2 {
+    min-height: 2.2rem;
+  }
+}

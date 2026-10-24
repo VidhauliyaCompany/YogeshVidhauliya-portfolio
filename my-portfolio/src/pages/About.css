@@ -1,0 +1,173 @@
+/* src/pages/About.css */
+.about {
+  padding: 80px 0 20px;
+}
+
+.sub-title {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 70px 0 30px;
+}
+
+.sub-title span {
+  color: var(--primary);
+}
+
+/* ---------- Intro ---------- */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+}
+
+.about-intro > .reveal:first-child {
+  flex: 1;
+}
+
+.about-intro > .reveal:last-child {
+  flex: 1.3;
+}
+
+.about-img img {
+  width: 300px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+  object-position: top center;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+}
+
+.about-info {
+  flex: 1.3;
+}
+
+.about-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.about-info p {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.about-details {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--bg-light);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.about-details p {
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.about-details strong {
+  color: var(--secondary);
+}
+
+/* ---------- Skills ---------- */
+.skills {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.skill {
+  margin-bottom: 22px;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.skill-bar {
+  height: 10px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+}
+
+.reveal.show .skill-fill {
+  animation: grow 1.5s ease;
+}
+
+@keyframes grow {
+  from { width: 0; }
+}
+
+/* ---------- Education ---------- */
+.education {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-light);
+  padding: 22px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.edu-icon {
+  font-size: 2.2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.edu-card h4 {
+  font-size: 1.1rem;
+}
+
+.edu-card p {
+  color: var(--text-muted);
+}
+
+.edu-card span {
+  font-size: 0.85rem;
+  color: var(--secondary);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 240px;
+    height: 280px;
+  }
+
+  .about-details {
+    text-align: left;
+  }
+}

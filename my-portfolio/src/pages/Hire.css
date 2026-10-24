@@ -1,0 +1,125 @@
+/* src/pages/Hire.css */
+.hire {
+  padding: 80px 0 20px;
+}
+
+.hire-subtitle {
+  text-align: center;
+  max-width: 550px;
+  margin: -20px auto 20px;
+  color: var(--text-muted);
+}
+
+/* ---------- Services ---------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: var(--bg-light);
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  margin-bottom: 18px;
+  transition: 0.4s;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.service-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+/* ---------- Process steps ---------- */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.step-card {
+  position: relative;
+  background: var(--bg-light);
+  padding: 35px 25px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--secondary);
+}
+
+.step-no {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.18;
+}
+
+.step-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- Select dropdown (matches inputs) ---------- */
+.form-group select {
+  padding: 13px 16px;
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+}
+
+.form-group select.input-error {
+  border-color: #ef4444;
+}

@@ -1,0 +1,42 @@
+/* src/components/Loader.css */
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: var(--bg);
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.loader.fade {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-ring {
+  width: 70px;
+  height: 70px;
+  border: 5px solid var(--bg-light);
+  border-top-color: var(--primary);
+  border-right-color: var(--secondary);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.loader-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.loader-logo span {
+  color: var(--primary);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
